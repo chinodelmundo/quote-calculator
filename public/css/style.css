@@ -1,0 +1,206 @@
+body {
+    margin: 3rem;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+}
+
+.main-container {
+    margin: 1rem;
+    width: 60%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #3a3838bb;
+    margin-bottom: 2rem;
+}
+
+.form-container {
+    display: flex;
+}
+
+.form-container > div {
+    flex-grow: 1;
+    margin: 2rem 1.2rem 2rem 0;
+}
+
+.slider-container {
+    margin: 1rem 1rem 2rem 0;
+}
+
+.slider-container > input {
+    margin: 0;
+}
+
+.slider-value {
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider-info {
+    display: flex;
+    justify-content: space-between;
+    color: #514e4ebb;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+}
+
+.apply-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-calc-quote {
+    margin-bottom: 1rem;
+    width: 20rem;
+    text-transform: none;
+    box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: #2adf62;
+}
+
+.submit-footnote {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #646060bb;
+}
+
+/** Calculate Page **/
+.block-container {
+    margin: 1vh 10vw;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 2.2rem;
+    color: #514e4ebb;
+}
+
+.edit-link-info,
+.edit-link-finance {
+    font-size: 1rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: #514e4ebb;
+    white-space: nowrap;
+}
+
+.finance-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    margin: 1rem 0 0 0;
+    color: #514e4ebb;
+    white-space: nowrap;
+}
+
+.footnote-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #514e4ebb;
+    white-space: nowrap;
+}
+
+.dotted-line {
+    overflow: hidden;
+    margin-right: 1rem;
+    color: #b2aeaebb;
+    margin-bottom: 1rem;
+}
+
+.detail-footnote {
+    font-size: 0.9rem;
+    color: #3a3838bb;
+    font-weight: bold;
+}
+
+.money-text {
+    color: #36e7df;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.hidden-form {
+    display: none;
+}
+
+.btn-update {
+    margin-bottom: 2rem;
+}
+
+#update-info-btn-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/** Success page **/
+.success-info {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #646060bb;
+}
+
+/*** Mobile ***/
+@media only screen and (max-width: 768px) {
+    .main-container {
+        width: 90%;
+    }
+
+    .block-container {
+        margin: 1vh;
+    }
+}
+
+/*** SLIDER ***/
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+    transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4caf50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4caf50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}

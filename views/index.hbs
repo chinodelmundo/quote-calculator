@@ -1,0 +1,71 @@
+<div class="main-container">
+    <div class="header">Quote calculator</div>
+    {{#if data}}
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value={{data._id}} <div class="form-container">
+        <input type="hidden" name="option" value="1" <div class="form-container">
+        <div class="slider-container">
+            <div id="amount-required-value" class="slider-value"></div>
+            <input name="amountRequired" type="range" min="2100" max="15000" step="100" value={{data.AmountRequired}}
+                class="slider" id="amount-required">
+            <div class="slider-info">
+                <div>$2,100</div>
+                <div>How much do you need?</div>
+                <div>$15,000</div>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div id="term-value" class="slider-value"></div>
+            <input name="term" type="range" min="1" max="10" value={{data.Term}} class="slider" id="term">
+            <div class="slider-info">
+                <div>1</div>
+                <div>Term</div>
+                <div>10</div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="input-field">
+                <select name="title" id="select-title">
+                    <option value={{data.Title}} selected>{{data.Title}}</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </select>
+                <label>Title</label>
+            </div>
+            <div class="input-field">
+                <input name="firstName" type="text" id="first-name" value={{data.FirstName}} />
+                <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field">
+                <input name="lastName" type="text" id="last-name" value={{data.LastName}} />
+                <label for="last-name">Last Name</label>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="input-field">
+                <input name="email" type="text" id="email" value={{data.Email}} />
+                <label for="email">Your email</label>
+            </div>
+            <div class="input-field">
+                <input name="mobile" type="text" id="mobile" value={{data.Mobile}} />
+                <label for="mobile">Mobile number</label>
+            </div>
+        </div>
+        <div class="submit-container">
+            <div>
+                <button class="btn waves-effect waves-light btn-calc-quote" type="submit">
+                    Calculate Quote
+                </button>
+                <div class=" submit-footnote">
+                    Quote does not affect your credit score.
+                </div>
+            </div>
+        </div>
+    </form>
+    {{else}}
+    <div>
+        {{error}}
+    </div>
+    {{/if}}
+</div>
+<script src="/js/index.js"></script>

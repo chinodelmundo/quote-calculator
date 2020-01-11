@@ -1,0 +1,130 @@
+<div class="main-container">
+    <div class="header">Your Quote</div>
+    <div class="block-container info-container">
+        <div class="block-header">
+            <div>Your information</div>
+            <div class="edit-link-info"><a href="#">Edit</a></div>
+        </div>
+        <div class="info-row">
+            <div>Name</div>
+            <div>{{data.FirstName}} {{data.LastName}}</div>
+        </div>
+        <div class="info-row">
+            <div>Mobile</div>
+            <div>{{data.Mobile}}</div>
+        </div>
+        <div class="info-row">
+            <div>Email</div>
+            <div>{{data.Email}}</div>
+        </div>
+    </div>
+    <form action="/update" method="POST" class="block-container info-container hidden-form">
+        <input type="hidden" name="id" value={{data._id}} <div class="form-container">
+        <input type="hidden" name="option" value="2" <div class="form-container">
+        <div class="block-header">
+            <div>Your information</div>
+            <div class="edit-link-info"><a href="#">Cancel Edit</a></div>
+        </div>
+        <div class="info-row">
+            <div>Name</div>
+            <div class="input-field">
+                <input name="firstName" type="text" id="first-name" value={{data.FirstName}} />
+                <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field">
+                <input name="lastName" type="text" id="last-name" value={{data.LastName}} />
+                <label for="last-name">Last Name</label>
+            </div>
+        </div>
+        <div class="info-row">
+            <div>Mobile</div>
+            <div class="input-field">
+                <input name="mobile" type="text" id="mobile" value={{data.Mobile}} />
+                <label for="mobile">Mobile number</label>
+            </div>
+        </div>
+        <div class="info-row">
+            <div class="info-value">Email</div>
+            <div class="input-field">
+                <input name="email" type="text" id="email" value={{data.Email}} />
+                <label for="email">Your email</label>
+            </div>
+        </div>
+        <div id="update-info-btn-container">
+            <button class="btn waves-effect waves-light btn-update" type="submit">
+                Update
+            </button>
+        </div>
+    </form>
+    <div class="block-container finance-container">
+        <div class="block-header">
+            <div>Finance details</div>
+            <div class="edit-link-finance"><a href="#">Edit</a></div>
+        </div>
+        <div class="finance-row">
+            <div>Finance amount</div>
+            <div class="money-text">{{data.AmountRequiredFormatted}}</div>
+        </div>
+        <div class="footnote-row">
+            <div class="dotted-line">
+                ....................................................................................................................................................................................................
+            </div>
+            <div class="detail-footnote">over {{data.TermMonthly}} months</div>
+        </div>
+        <div class="finance-row">
+            <div>Repayments from</div>
+            <div class="money-text">${{data.PMT}}</div>
+        </div>
+        <div class="footnote-row">
+            <div class="dotted-line">
+                ....................................................................................................................................................................................................
+            </div>
+            <div class="detail-footnote">Weekly</div>
+        </div>
+    </div>
+    <form action="/update" method="POST" class="block-container finance-container hidden-form">
+        <input type="hidden" name="id" value={{data._id}} <div class="form-container">
+        <input type="hidden" name="option" value="3" <div class="form-container">
+        <div class="block-header">
+            <div>Finance details</div>
+            <div class="edit-link-finance"><a href="#">Cancel Edit</a></div>
+        </div>
+        <div class="slider-container">
+            <div id="amount-required-value" class="slider-value"></div>
+            <input name="amountRequired" type="range" min="2100" max="15000" step="100" value={{data.AmountRequired}}
+                class="slider" id="amount-required">
+            <div class="slider-info">
+                <div>$2,100</div>
+                <div>How much do you need?</div>
+                <div>$15,000</div>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div id="term-value" class="slider-value"></div>
+            <input name="term" type="range" min="1" max="10" value={{data.Term}} class="slider" id="term">
+            <div class="slider-info">
+                <div>1</div>
+                <div>Term</div>
+                <div>10</div>
+            </div>
+        </div>
+        <div id="update-info-btn-container">
+            <button class="btn waves-effect waves-light btn-update" type="submit">
+                Update
+            </button>
+        </div>
+    </form>
+    <div class="submit-container">
+        <form action="/success" method="POST">
+            <button class="btn waves-effect waves-light btn-calc-quote" type="submit">
+                Apply now
+            </button>
+        </form>
+    </div>
+    <div class="submit-footnote">
+        Total repayments ${{data.TotalAmount}}, made up of an establishment fee of $300.00.<br />
+        Interest of ${{data.Interest}} The repayment amount is based on the variable selected.<br />
+        Is subject to our assessment and suitability, and other important terms and conditions apply.
+    </div>
+</div>
+<script src="/js/quote.js"></script>
